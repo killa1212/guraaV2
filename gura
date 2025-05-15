@@ -1,3 +1,116 @@
+-- .gg/KZ67umXuT4
+if not getgenv().motional then
+    getgenv().motional = {
+        SilentAim = {
+            Enabled = true,
+            HitPart = "HumanoidRootPart",
+            HitPartMode = "static", -- static / closest / random
+            Prediction = {
+                Enabled = true,
+                X = 1,
+                Y = 1
+            },
+            HitChance = 100,
+            HealthCheck = false,
+            KnifeCheck = false,
+            FOV = {
+                Visible = true,
+                Transparency = 1,
+                Thickness = 1,
+                Radius = 250,
+                OutlineColor = Color3.fromRGB(255, 255, 255)
+            }
+        },
+        Camlock = {
+            Enabled = false,
+            Bind = "Q",
+            HitPart = "HumanoidRootPart",
+            HitPartMode = "Static", -- static / closest / random
+            Time = 0, -- higher = smoother
+            Prediction = {
+                Enabled = false,
+                X = 0.08,
+                Y = 0.08
+            },
+            HealthCheck = false,
+            KnifeCheck = false
+        },
+        Backtrack = {
+            Enabled = false,
+            MaxTime = 5,
+            Prediction = {
+                Enabled = false,
+                X = 0.2,
+                Y = 0.2
+            },
+            MaxRecords = 10,
+            RecordInterval = 0.1,
+            Visualize = {
+                Enabled = false,
+                Color = Color3.fromRGB(255, 0, 0),
+                Transparency = 0.7,
+                Size = 0.5
+            }
+        },
+        TriggerBot = {
+            Enabled = false,
+            ToggleKey = "T",
+            Delay = 0.1,
+            TriggerRadius = 50
+        },
+        HitboxExpander = {
+            Enabled = false,
+            Size = 25,
+            RefreshTime = 5,
+            Visualize = false,
+            VisualizeFillColor = Color3.fromRGB(0, 255, 255),
+            VisualizeOutlineColor = Color3.fromRGB(255, 255, 255),
+            VisualizeTransparency = 0.7
+        },
+        Movement = {
+            WalkSpeed = {
+                Enabled = true,
+                NormalSpeed = 20,
+                FastSpeed = 100,
+                ToggleKey = "Z"
+            },
+            JumpPower = {
+                Enabled = false,
+                NormalPower = 50,
+                FastPower = 100,
+                ToggleKey = "Y"
+            }
+        },
+        ESP = {
+            Enabled = false,
+            TeamCheck = false,
+            MaxDistance = 300,
+            Box = {
+                Enabled = false,
+                Color = Color3.fromRGB(255, 255, 255),
+                Outline = false,
+                OutlineColor = Color3.fromRGB(0, 0, 0),
+                Thickness = 1
+            },
+            Names = {
+                Enabled = false,
+                Color = Color3.fromRGB(255, 255, 255),
+                Outline = false,
+                OutlineColor = Color3.fromRGB(0, 0, 0),
+                Font = 2,
+                Size = 13,
+                ShowDistance = false
+            },
+            HealthBar = {
+                Enabled = true,
+                Side = "Left", -- Left / Right / Bottom
+                ColorLow = Color3.fromRGB(255, 0, 0),
+                ColorHigh = Color3.fromRGB(0, 255, 0),
+                OutlineColor = Color3.fromRGB(0, 0, 0)
+            }
+        }
+    }
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local UserInputService = game:GetService("UserInputService")
@@ -754,3 +867,4 @@ end)
 motional.backtrackAPI = {
     getBacktrackPosition = getBacktrackPosition
 }
+end
